@@ -13,7 +13,7 @@ public class FileFunction
 	Scanner sc =new Scanner(System.in);
 	while(true) 
 	{
-	System.out.println("Enter the File Feature \n1.Create the File \n2.Delete the File \n3.Search the File ");
+	System.out.println("File Menu: \n1.Create the File \n2.Delete the File \n3.Search the File ");
 	int n=sc.nextInt();
 	System.out.println("Already Existing Files in Ascending Order:");
 	FileFunction.display();
@@ -25,10 +25,10 @@ public class FileFunction
 	    case 1:
 	    	try {
 	    		if (file.createNewFile()) { 
-	    				System.out.println(file.getName() + " is created!"); 
+	    				System.out.println(file.getName() + " is Created Sucessfully!"); 
 	  						} 
 	  						else {
-	  							System.out.println("File not Created SuccessFully");
+	  							System.out.println("File already Created,try again another Filename");
 	  						}
 	  	
 			} catch (IOException e) { 
@@ -38,7 +38,7 @@ public class FileFunction
 	    case 2:
 	        if(file.delete())                      //returns Boolean value  
 		   {  
-		   System.out.println(file.getName() + " deleted");   //getting and printing the file name  
+		   System.out.println(file.getName() + " Deleted Successfully");   //getting and printing the file name  
 		   }  
 		   else  
 		   {  
@@ -116,9 +116,9 @@ public class FileFunction
  	          // Get the names of the files by using the .getName() method
  	          for (int i = 0; i < files.length; i++) {
  	             // System.out.println(files[i].getName());
- 	             if(name.equals(files[i].getName())){
+ 	             if(name.equalsIgnoreCase(files[i].getName())){
 	        		  count1++;
-	        		  System.out.println(name+" File founded Successfully");
+	        		  System.out.println(name+" File Founded Successfully");
 	        		  System.out.println("file folder is :\n"+files[i].getAbsolutePath());
 	        	  }
 	        	  } 
